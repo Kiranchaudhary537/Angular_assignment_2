@@ -1,0 +1,3 @@
+<app-carousel [slides]="slideList"></app-carousel>
+<app-slide-list (deleteSlide)="onDeleteSlide($event)" [slides]="slideList"></app-slide-list>
+<app-add-slide-form (addSlide)="onAddSlide($event)"></app-add-slide-form>
