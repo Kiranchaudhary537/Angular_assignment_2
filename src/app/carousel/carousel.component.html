@@ -1,5 +1,6 @@
 <div class="relative w-4/5  mx-auto mt-4 border-2">
   <!-- Carousel wrapper -->
+  @if(slides.length>0){
   <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
 
     <!-- Slides -->
@@ -17,14 +18,15 @@
     }
 
     <!-- Slider indicators  -->
-    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse ">
       @for(slide of slides;track slide; let idx = $index){
-      <button type="button" class="w-3 h-3 bg-white/50 hover:bg-white/90 rounded-full"
+      <button type="button" class="w-3 h-3 rounded-full shadow-lg "
+        [ngClass]="{ 'bg-white hover:bg-white': idx == slideIndex, 'bg-black/30 hover:bg-white': idx != slideIndex }"
         (click)="goToSlide(idx)"></button>
       }
     </div>
   </div>
-  
+
   <!-- Slider controls -->
   <button type="button"
     class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
@@ -50,4 +52,7 @@
       <span class="sr-only">Next</span>
     </span>
   </button>
+  }
+  @if(slides.length<=0){ <h1 class="text-2xl text-center font-semibold my-1">No Slides Available</h1>
+    }
 </div>
