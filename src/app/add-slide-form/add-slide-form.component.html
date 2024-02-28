@@ -2,8 +2,8 @@
   (ngSubmit)="addNewSlide(); addSlideForm.reset()">
   <h1 class="text-2xl font-semibold my-1">Add New Slides</h1>
   <div class="flex justify-between">
-    <input type="text" placeholder="Image URL" formControlName="imageUrl" required>
-    <input type="text" placeholder="Caption" formControlName="caption" required>
+    <input class="border p-1 px-2" type="text" placeholder="Image URL" formControlName="imageUrl" required>
+    <input class="border p-1 px-2" type="text" placeholder="Caption" formControlName="caption" required>
     <button class="bg-green-500 hover:bg-green-700 p-1 text-white rounded" type="submit">Add Slide</button>
   </div>
 </form>
